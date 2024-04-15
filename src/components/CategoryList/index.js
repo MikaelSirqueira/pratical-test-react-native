@@ -1,8 +1,8 @@
-import { Text, View, ScrollView} from 'react-native';
+import { Text, View, ScrollView, Pressable} from 'react-native';
 import { styles } from './styles'
 
 
-export function CategoryList({categoriesData}) {
+export function CategoryList({categoriesData, onCategoryClick }) {
   const colors = { 
     orange: '#F2994A', green: '#219653', purple: '#9B51E0',
     red: '#d1372c', gray: '#4F4F4F', blue: '#56CCF2',
@@ -12,7 +12,7 @@ export function CategoryList({categoriesData}) {
   const getColor = (index) => {
     const colorKeys = Object.keys(colors);
     return colors[colorKeys[index % colorKeys.length]];
-  };
+  };  
 
   return (
     <View style={styles.container}>   
@@ -21,7 +21,8 @@ export function CategoryList({categoriesData}) {
         {
           categoriesData.slice(0, 20).map((item, index) => (
             <View key={index} style={styles.section}>
-              <View 
+              <Pressable 
+                onPress={() => onCategoryClick(item)}
                 style={{ ...styles.square, backgroundColor: getColor(index)}} 
               />
               <Text key={`index_${index}`}>

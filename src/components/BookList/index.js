@@ -2,15 +2,16 @@ import React from 'react';
 import { View, Text, ScrollView, Image } from 'react-native';
 import { styles } from './styles';
 
-export function BookList({ title, booksData }) {
+export function BookList({ title, booksData, isHorizontal=true }) {
   return (
-    <View style={styles.container}>
+    <>
       <Text style={styles.titleSection}>{title}</Text>
 
       <ScrollView
         contentContainerStyle={styles.contentBooks}
         showsHorizontalScrollIndicator={false}
-        horizontal
+        showsVerticalScrollIndicator={false}
+        horizontal={isHorizontal}
       >
         {booksData.map((item, index) => (
           <View style={styles.catalog} key={index} >
@@ -30,6 +31,6 @@ export function BookList({ title, booksData }) {
           </View>
         ))}
       </ScrollView>
-    </View>
+    </>
   );
 }
