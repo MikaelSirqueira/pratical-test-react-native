@@ -12,8 +12,8 @@ export function BookList({ title, booksData }) {
         showsHorizontalScrollIndicator={false}
         horizontal
       >
-        {booksData.map((item) => (
-          <View style={styles.catalog} >
+        {booksData.map((item, index) => (
+          <View style={styles.catalog} key={index} >
             <Image source={{ uri: item.book_image }} style={styles.img} />
             
             <Text style={styles.title}>
@@ -23,8 +23,8 @@ export function BookList({ title, booksData }) {
             <Text style={styles.author}>{item.author}</Text>
 
             <View style={styles.star}>
-              {Array.from({ length: 5 }).map((_) => (
-                <Image source={require('../../assets/Star.png')} />
+              {Array.from({ length: 5 }).map((_, starIndex) => (
+                <Image key={starIndex} source={require('../../assets/Star.png')} />
               ))}
             </View>
           </View>

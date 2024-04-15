@@ -8,5 +8,5 @@ export const styles = StyleSheet.create({
   },
   scrollContainer: {
     gap: 26,
-  }
+  },  
 });
