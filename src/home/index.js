@@ -12,7 +12,7 @@ const URL_CATEGORIES = '/svc/books/v3/lists/names.json';
 const URL_BOOKS = '/svc/books/v3/lists/overview.json';
 const API_KEY = 'vi0bsV0yOCA9qYnmAaOUJV4dO0BNhUGR';
 
-export default function App() {
+export function Home() {
   const [recommendedBooks, setRecommendedBooks] = useState([]);
   const [popularBooks, setPopularBooks] = useState([]);
   const [categories, setCategories] = useState([]);
