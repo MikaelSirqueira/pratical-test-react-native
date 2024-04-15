@@ -8,7 +8,8 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   title: {
-    fontSize: 32, 
+    fontSize: 32,
+    fontWeight: '700',
   },
   img : {
     width: 50,
