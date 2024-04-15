@@ -9,6 +9,10 @@ export function CategoryList({categoriesData}) {
     green2: '#2fde3d', pink: '#d22fde', yellow: '#e6d525',
   }
 
+  const getColor = (index) => {
+    const colorKeys = Object.keys(colors);
+    return colors[colorKeys[index % colorKeys.length]];
+  };
 
   return (
     <View style={styles.container}>   
@@ -18,7 +22,7 @@ export function CategoryList({categoriesData}) {
           categoriesData.slice(0, 20).map((item, index) => (
             <View key={index} style={styles.section}>
               <View 
-                style={{ ...styles.square, backgroundColor: colors[index] || colors[Object.keys(colors)[index % Object.keys(colors).length]] }} 
+                style={{ ...styles.square, backgroundColor: getColor(index)}} 
               />
               <Text key={`index_${index}`}>
                 {item.list_name.length > 9 ? item.list_name.slice(0, 9) + '...' : item.list_name} 

@@ -1,9 +1,10 @@
-import { View, ScrollView, Text, Image } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import { styles } from './styles';
 import { Header } from '../components/Header';
 import { Search } from '../components/Search';
 import { BookList } from '../components/BookList';
 import { CategoryList } from '../components/CategoryList';
+import { Footer } from '../components/Footer';
 import api  from '../api/api';
 import React, { useState, useEffect } from 'react';
 
@@ -53,6 +54,7 @@ export default function App() {
         <CategoryList categoriesData={categories} />
         <BookList title={'Os mais lidos da semana'} booksData={popularBooks} /> 
       </ScrollView>
+      <Footer />
     </View>
   );
 }
